@@ -9,7 +9,7 @@ public class BookListerner implements OnClickListener {
 	private String message, phoneNumber;
 	private Context context;
 
-	public void BookListener(Context context, String message, String phoneNumber) {
+	public BookListerner(Context context, String message, String phoneNumber) {
 		this.context = context;
 		this.message = message;
 		this.phoneNumber = phoneNumber;
