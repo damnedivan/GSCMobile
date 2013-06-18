@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">GSC Mobile</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_up">BACK</string>
+    <string name="action_book">BOOK</string>
+    <string name="action_pricing">PRICE</string>
+    <string name="action_done">DONE</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_app_dashboard">App Dashboard</string>
+    <string name="button_sport_venues">Sport Venues</string>
+    <string name="button_classes">Classes</string>
+    <string name="button_gproshop">G Pro Shop</string>
+    <string name="button_zonecafe">Zone Cafe</string>
+    <string name="title_activity_classes_content">Classes</string>
+    <string name="title_activity_gpro_shop">G Pro Shop</string>
+    <string name="title_activity_zone_cafe">Zone Cafe</string>
+    <string name="title_activity_golf_simulator_venue">Golf Simulator</string>
+    <string name="title_activity_futsal_venue">Futsal</string>
+    <string name="title_activity_pool_venue">Swimming Pool &amp; Whirlpool</string>
+    <string name="title_activity_badminton_venue">Badminton Venue</string>
+    <string name="title_activity_aerobic_venue">Aerobic Venue</string>
+    <string name="title_activity_gym_venue">Gym Venue</string>
+    <string name="title_activity_book_golf">Book Golf</string>
+    <string name="title_textNama">Nama :</string>
+    <string name="title_textAlamat">Alamat :</string>
+    <string name="title_numTelpon">Nomor telepon :</string>
+    <string name="hint_textNama">Nama jelas</string>
+    <string name="hint_textAlamat">Alamat jelas</string>
+    <string name="hint_numTelepon">Nomor aktif</string>
+    <string name="button_date_picker">Pilih Jadwal</string>
+    <string name="button_book">BOOK!</string>
+    <string name="title_btn_date_picker">Silakan pilih jadwal :</string>
+    <string name="title_operational_hours">Operational Hours &amp; Pricing</string>
+    <string name="title_activity_golf">Golf</string>
+
+</resources>
