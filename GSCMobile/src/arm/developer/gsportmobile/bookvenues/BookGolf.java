@@ -7,12 +7,15 @@ import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import arm.developer.gsportmobile.R;
+import arm.developer.gsportmobile.adapter.AdapterJam;
 
 import com.actionbarsherlock.app.SherlockActivity;
 
@@ -24,6 +27,7 @@ public class BookGolf extends SherlockActivity {
 	private int mYear;
 	private int mMonth;
 	private int mDay;
+	private Spinner spnJamBook;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -35,8 +39,13 @@ public class BookGolf extends SherlockActivity {
 		namaGolf = (EditText) findViewById(R.id.text_golfNama);
 		alamatGolf = (EditText) findViewById(R.id.text_golfAlamat);
 		telpGolf = (EditText) findViewById(R.id.text_golfTelp);
+		spnJamBook = (Spinner) findViewById(R.id.spinnerJamGolf);
+		// TODO===========================DATEPICKER===================================
 		tanggalGolf = (TextView) findViewById(R.id.tv_golfTanggal);
-
+		// TODO===========================ENDDATEPICKER===================================
+		setAdapter();
+		
+		
 		btnGolf.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -45,17 +54,20 @@ public class BookGolf extends SherlockActivity {
 				String namaG = namaGolf.getText().toString();
 				String alamatG = alamatGolf.getText().toString();
 				String telpG = telpGolf.getText().toString();
+				AdapterJam aj = (AdapterJam) spnJamBook.getSelectedItem();
+				// TODO===========================DATEPICKER===================================
 				String tanggalG = tanggalGolf.getText().toString();
+				// TODO===========================ENDDATEPICKER===================================
 
-				final String smsMessage = String.format("%s\n%s\n%s\n%s",
-						namaG, alamatG, telpG, tanggalG);
+				final String smsMessage = String.format("%s\n%s\n%s\n%s\n%s",
+						namaG, alamatG, telpG, tanggalG, aj);
 
 				try {
 
 					SmsManager smsM = SmsManager.getDefault();
 					smsM.sendTextMessage("+6287792021743", null, smsMessage,
 							null, null);
-					Toast.makeText(getApplicationContext(), "SMS Sent!",
+					Toast.makeText(getApplicationContext(), "Request Dikirim",
 							Toast.LENGTH_LONG).show();
 				} catch (Exception e) {
 					Toast.makeText(getApplicationContext(),
@@ -66,6 +78,8 @@ public class BookGolf extends SherlockActivity {
 
 			}
 		});
+
+		// TODO===========================DATEPICKER===================================
 
 		btnTglGolf.setOnClickListener(new OnClickListener() {
 
@@ -82,6 +96,7 @@ public class BookGolf extends SherlockActivity {
 		mMonth = c.get(Calendar.MONTH);
 		mDay = c.get(Calendar.DAY_OF_MONTH);
 		updateDisplay();
+		// TODO===========================ENDDATEPICKER===================================
 
 	}
 
@@ -103,5 +118,15 @@ public class BookGolf extends SherlockActivity {
 			updateDisplay();
 		}
 	};
+	// TODO===========================ENDDATEPICKER===================================
 
+	private void setAdapter() {
+		ArrayAdapter<AdapterJam> spnJamAdapter = new ArrayAdapter<AdapterJam>(
+				this, android.R.layout.simple_spinner_item,
+				AdapterJam.values());
+		spnJamAdapter
+				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		spnJamBook.setAdapter(spnJamAdapter);
+		
+	}
 }

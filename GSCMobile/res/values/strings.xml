@@ -25,10 +25,12 @@
     <string name="title_activity_book_golf">Book Golf</string>
     <string name="title_textNama">Nama :</string>
     <string name="title_textAlamat">Alamat :</string>
+    <string name="title_spinnerJam">Jam :</string>
     <string name="title_numTelpon">Nomor telepon :</string>
     <string name="hint_textNama">Nama jelas</string>
     <string name="hint_textAlamat">Alamat jelas</string>
     <string name="hint_numTelepon">Nomor aktif</string>
+    <string name="prompt_jam">Silakan pilih jadwal</string>
     <string name="button_date_picker">Pilih Jadwal</string>
     <string name="button_book">BOOK!</string>
     <string name="title_btn_date_picker">Silakan pilih jadwal :</string>
