@@ -1,0 +1,166 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="240dip"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".ConfirmationDialog" >
+
+    <!-- Nama -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5sp"
+        android:layout_marginLeft="10sp"
+        android:layout_marginRight="10sp"
+        android:layout_marginTop="5sp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="110dip"
+            android:layout_height="wrap_content"
+            android:text="@string/conf_nama" />
+
+        <TextView
+            android:id="@+id/conf_textNama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <!-- Alamat -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5sp"
+        android:layout_marginLeft="10sp"
+        android:layout_marginRight="10sp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="110dip"
+            android:layout_height="wrap_content"
+            android:text="@string/conf_alamat" />
+
+        <TextView
+            android:id="@+id/conf_textAlamat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <!-- Nomor Telp -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5sp"
+        android:layout_marginLeft="10sp"
+        android:layout_marginRight="10sp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="110dip"
+            android:layout_height="wrap_content"
+            android:text="@string/conf_telp" />
+
+        <TextView
+            android:id="@+id/conf_textTelp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <!-- Tanggal -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5sp"
+        android:layout_marginLeft="10sp"
+        android:layout_marginRight="10sp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="110dip"
+            android:layout_height="wrap_content"
+            android:text="@string/conf_tanggal" />
+
+        <TextView
+            android:id="@+id/conf_textTanggal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <!-- Jam -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5sp"
+        android:layout_marginLeft="10sp"
+        android:layout_marginRight="10sp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="110dip"
+            android:layout_height="wrap_content"
+            android:text="@string/conf_jam" />
+
+        <TextView
+            android:id="@+id/conf_textJam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <!-- Durasi -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5sp"
+        android:layout_marginLeft="10sp"
+        android:layout_marginRight="10sp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="110dip"
+            android:layout_height="wrap_content"
+            android:text="@string/conf_durasi" />
+
+        <TextView
+            android:id="@+id/conf_textDurasi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="10dip" >
+
+        <ImageButton
+            android:id="@+id/conf_buttonEdit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="10dip"
+            android:background="@null"
+            android:contentDescription="@string/cntDesc_buttonEdit"
+            android:src="@drawable/button_edit" />
+
+        <ImageButton
+            android:id="@+id/conf_buttonConfirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|center_horizontal"
+            android:layout_marginLeft="10dip"
+            android:background="@null"
+            android:contentDescription="@string/cntDesc_buttonKirim"
+            android:src="@drawable/button_kirim" />
+    </TableRow>
+
+</LinearLayout>

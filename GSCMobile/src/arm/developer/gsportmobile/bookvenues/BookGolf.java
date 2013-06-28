@@ -15,6 +15,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import arm.developer.gsportmobile.R;
+import arm.developer.gsportmobile.adapter.AdapterDurasi;
 import arm.developer.gsportmobile.adapter.AdapterJam;
 
 import com.actionbarsherlock.app.SherlockActivity;
@@ -24,43 +25,49 @@ public class BookGolf extends SherlockActivity {
 	private Button btnGolf, btnTglGolf;
 	private EditText namaGolf, alamatGolf, telpGolf;
 	private TextView tanggalGolf;
+	private TextView judulGolf;
 	private int mYear;
 	private int mMonth;
 	private int mDay;
-	private Spinner spnJamBook;
+	private Spinner spnJam;
+	private Spinner spnDur;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.book_golf_layout);
 
+		judulGolf = (TextView) findViewById(R.id.tv_golfTitle);
 		btnGolf = (Button) findViewById(R.id.btn_golfBook);
 		btnTglGolf = (Button) findViewById(R.id.btn_golfTanggal);
 		namaGolf = (EditText) findViewById(R.id.text_golfNama);
 		alamatGolf = (EditText) findViewById(R.id.text_golfAlamat);
 		telpGolf = (EditText) findViewById(R.id.text_golfTelp);
-		spnJamBook = (Spinner) findViewById(R.id.spinnerJamGolf);
+		spnJam = (Spinner) findViewById(R.id.spinnerJamGolf);
+		spnDur = (Spinner) findViewById(R.id.spinnerDurasiGolf);
 		// TODO===========================DATEPICKER===================================
 		tanggalGolf = (TextView) findViewById(R.id.tv_golfTanggal);
 		// TODO===========================ENDDATEPICKER===================================
 		setAdapter();
-		
-		
+
 		btnGolf.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 
+				String judulG = judulGolf.getText().toString();
 				String namaG = namaGolf.getText().toString();
 				String alamatG = alamatGolf.getText().toString();
 				String telpG = telpGolf.getText().toString();
-				AdapterJam aj = (AdapterJam) spnJamBook.getSelectedItem();
+				AdapterJam aj = (AdapterJam) spnJam.getSelectedItem();
+				AdapterDurasi ad = (AdapterDurasi) spnDur.getSelectedItem();
 				// TODO===========================DATEPICKER===================================
 				String tanggalG = tanggalGolf.getText().toString();
 				// TODO===========================ENDDATEPICKER===================================
 
-				final String smsMessage = String.format("%s\n%s\n%s\n%s\n%s",
-						namaG, alamatG, telpG, tanggalG, aj);
+				final String smsMessage = String.format(
+						"%s\n%s\n%s\n%s\n%s\n%s\n%s", judulG, namaG, alamatG,
+						telpG, tanggalG, aj.getValue(), ad.getValue());
 
 				try {
 
@@ -118,15 +125,22 @@ public class BookGolf extends SherlockActivity {
 			updateDisplay();
 		}
 	};
+
 	// TODO===========================ENDDATEPICKER===================================
 
 	private void setAdapter() {
 		ArrayAdapter<AdapterJam> spnJamAdapter = new ArrayAdapter<AdapterJam>(
-				this, android.R.layout.simple_spinner_item,
-				AdapterJam.values());
+				this, android.R.layout.simple_spinner_item, AdapterJam.values());
 		spnJamAdapter
 				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		spnJamBook.setAdapter(spnJamAdapter);
-		
+		spnJam.setAdapter(spnJamAdapter);
+
+		ArrayAdapter<AdapterDurasi> spnDurAdapter = new ArrayAdapter<AdapterDurasi>(
+				this, android.R.layout.simple_spinner_item,
+				AdapterDurasi.values());
+		spnDurAdapter
+				.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+		spnDur.setAdapter(spnDurAdapter);
+
 	}
 }
