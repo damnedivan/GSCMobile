@@ -3,9 +3,11 @@ package arm.developer.gsportmobile.main;
 import java.util.ArrayList;
 
 import android.annotation.SuppressLint;
+import android.app.ActionBar;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -13,6 +15,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 import arm.developer.gsportmobile.R;
 import arm.developer.gsportmobile.adapter.ClassesContentStableArrayAdapter;
+import arm.developer.gsportmobile.dashboard.AppDashboard;
 
 public class ClassesContent extends Activity {
 
@@ -20,7 +23,10 @@ public class ClassesContent extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main_content_classes_layout);
-		
+
+		ActionBar actionBar = getActionBar();
+		actionBar.setDisplayHomeAsUpEnabled(true);
+
 		final ListView listview = (ListView) findViewById(R.id.listView2);
 		String[] values = new String[] { "Golf Simulator", "Futsal",
 				"Swimming Pool & Whirlpool", "Gym", "Badminton", "Aerobic" };
@@ -29,8 +35,8 @@ public class ClassesContent extends Activity {
 		for (int i = 0; i < values.length; ++i) {
 			list.add(values[i]);
 		}
-		final ClassesContentStableArrayAdapter adapter = new ClassesContentStableArrayAdapter(this,
-				android.R.layout.simple_list_item_1, list);
+		final ClassesContentStableArrayAdapter adapter = new ClassesContentStableArrayAdapter(
+				this, android.R.layout.simple_list_item_1, list);
 		listview.setAdapter(adapter);
 
 		listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -64,11 +70,22 @@ public class ClassesContent extends Activity {
 		});
 	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see android.app.Activity#onOptionsItemSelected(android.view.MenuItem)
+	 */
 	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.classes_content, menu);
-		return true;
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case android.R.id.home:
+			Intent intent = new Intent(this, AppDashboard.class);
+			intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			startActivity(intent);
+
+			break;
+		}
+		return super.onOptionsItemSelected(item);
 	}
 
 }

@@ -2,6 +2,7 @@ package arm.developer.gsportmobile.main;
 
 import java.util.ArrayList;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -25,6 +26,9 @@ public class SportVenues extends SherlockActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main_content_sport_venues_layout);
+
+		ActionBar actionBar = getActionBar();
+		actionBar.setDisplayHomeAsUpEnabled(true);
 
 		final ListView listview = (ListView) findViewById(R.id.listview);
 		String[] values = new String[] { "Golf Simulator", "Futsal",
@@ -99,6 +103,8 @@ public class SportVenues extends SherlockActivity {
 
 			}
 		});
+		
+
 	}
 
 }
