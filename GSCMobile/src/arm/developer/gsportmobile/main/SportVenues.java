@@ -3,14 +3,17 @@ package arm.developer.gsportmobile.main;
 import java.util.ArrayList;
 
 import android.app.ActionBar;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import arm.developer.gsportmobile.R;
 import arm.developer.gsportmobile.adapter.SportVenuesStableArrayAdapter;
+import arm.developer.gsportmobile.dashboard.AppDashboard;
 import arm.developer.gsportmobile.venues.AerobicVenue;
 import arm.developer.gsportmobile.venues.BadmintonVenue;
 import arm.developer.gsportmobile.venues.FutsalVenue;
@@ -18,9 +21,7 @@ import arm.developer.gsportmobile.venues.GolfSimulatorVenue;
 import arm.developer.gsportmobile.venues.GymVenue;
 import arm.developer.gsportmobile.venues.PoolVenue;
 
-import com.actionbarsherlock.app.SherlockActivity;
-
-public class SportVenues extends SherlockActivity {
+public class SportVenues extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -103,8 +104,20 @@ public class SportVenues extends SherlockActivity {
 
 			}
 		});
-		
 
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case android.R.id.home:
+			Intent intent = new Intent(this, AppDashboard.class);
+			intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			startActivity(intent);
+
+			break;
+		}
+		return super.onOptionsItemSelected(item);
 	}
 
 }

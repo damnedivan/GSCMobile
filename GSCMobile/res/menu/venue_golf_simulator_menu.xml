@@ -2,6 +2,7 @@
 
     <item
         android:id="@+id/action_bookGolf"
+        android:icon="@drawable/ic_action_go_to_today"
         android:showAsAction="ifRoom"
         android:title="@string/action_book"/>
     <item
@@ -9,9 +10,5 @@
         android:icon="@drawable/ic_action_info"
         android:showAsAction="ifRoom"
         android:title="@string/action_pricing"/>
-    <item
-        android:id="@+id/action_settings"
-        android:title="@string/action_settings">
-    </item>
 
 </menu>
