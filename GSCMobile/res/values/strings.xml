@@ -22,7 +22,8 @@
     <string name="title_activity_badminton_venue">Badminton Venue</string>
     <string name="title_activity_aerobic_venue">Aerobic Venue</string>
     <string name="title_activity_gym_venue">Gym Venue</string>
-    <string name="title_activity_book_golf">Book Golf</string>
+    
+    <!-- BOOKING -->
     <string name="title_textNama">Nama :</string>
     <string name="title_textAlamat">Alamat :</string>
     <string name="title_spinnerJam">Jam :</string>
