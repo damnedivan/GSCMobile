@@ -1,10 +1,12 @@
 package arm.developer.gsportmobile.venues;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 import arm.developer.gsportmobile.R;
 import arm.developer.gsportmobile.bookvenues.BookGolf;
+import arm.developer.gsportmobile.main.SportVenues;
 import arm.developer.gsportmobile.pricing.PricingGolf;
 
 import com.actionbarsherlock.app.SherlockActivity;
@@ -18,6 +20,9 @@ public class GolfSimulatorVenue extends SherlockActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.venue_golf_simulator_layout);
+
+		ActionBar actionBar = getActionBar();
+		actionBar.setDisplayHomeAsUpEnabled(true);
 
 		// Overlay
 		StringBuilder builder = new StringBuilder();
@@ -76,6 +81,13 @@ public class GolfSimulatorVenue extends SherlockActivity {
 			Intent openBookGolf = new Intent(GolfSimulatorVenue.this,
 					BookGolf.class);
 			startActivity(openBookGolf);
+
+			break;
+
+		case android.R.id.home:
+			Intent intent = new Intent(this, SportVenues.class);
+			intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			startActivity(intent);
 
 			break;
 
